@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Your Name
+ * @email you@example.org
+ * @date    2016-11-15 19:44:20
+ * @version $Id$
+ */
+
+ .demo {
+        padding: 10px;
+    }
+
+    form {
+        display: block;
+        margin-top: 0em;
+    }
+
+    .upload_box {
+        width: 800px;
+        margin: 1em auto;
+    }
+
+    .upload_main {
+        border-width: 1px 1px 2px;
+        border-style: solid;
+        border-color: #ccc #ccc #ddd;
+        background-color: #fbfbfb;
+    }
+
+    .upload_choose {
+        padding: 1em;
+    }
+
+    .upload_drag_area {
+        display: inline-block;
+        width: 60%;
+        padding: 4em 0;
+        margin-left: .5em;
+        border: 1px dashed #ddd;
+        color: #999;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .upload_preview {
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        background-color: #fff;
+        overflow: hidden;
+        _zoom: 1;
+    }
+
+    .upload_submit {
+        padding-top: 1em;
+        padding-left: 1em;
+    }

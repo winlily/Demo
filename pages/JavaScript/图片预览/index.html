@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS实现图片预览</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="../../resource/css/reset.css">
+  <link rel="stylesheet" href="css/previewImg.css">
+  </head>
+<body>
+	<div class="viewer">
+		<div class="viewer-header">
+			<!--关闭按钮-->
+			<a data-id="destroy" class="viewer-close" href="#">×</a>
+		</div>
+		<table class="img-viewer">
+      <tbody>
+        <tr>
+          <td class="viewer-inner" data-id="big_img">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="viewer-info">
+    	<div class="bar-top">
+    		<a href="#" data-id="expansion" class="expansion expansion_down">
+    			<i></i>
+          <span data-id="total-info" class=""></span>
+        </a>
+    	</div>
+    	<div class="img-thumbnail-list" data-id="img-thumbnail-list" style="">
+        <!--翻页不可用时加：disable-prev-->
+        <a data-id="prev_group" href="#" class="list-prev disable-prev"></a>
+        <div class="img-thumbnail-content">
+          <ul data-id="img-thumbnail-content" style="margin-left: 0px;">
+            <li data-id="pick">
+            	<a href="#" class="img-error">
+              	<img src="img/winlily.png" data-index=""/>
+              </a>
+            </li>
+            <li data-id="pick">
+              <a href="#" class="img-error">
+              	<img src="img/flower.png" data-index=""/>
+              </a>
+            </li>
+            <li data-id="pick">
+              <a href="#" class="img-error">
+              	<img src="img/girl.jpg" data-index=""/>
+              </a>
+            </li>
+            <li data-id="pick">
+              <a href="#" class="img-error">
+              	<img src="img/flower.png" data-index=""/>
+              </a>
+            </li>
+             <li data-id="pick">
+            	<a href="#" class="img-error current">
+              	<img src="img/winlily.png" data-index=""/>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!--翻页不可用时加：disable-next-->
+        <a data-id="next_group" href="#" class="list-next disable-next"></a>
+      </div>
+    </div>
+    <a data-id="prev" class="viewer-prev" title="已是第一张" href="#"></a>
+    <a data-id="next" class="viewer-next" title="下一张" href="#"></a>
+	</div>
+  <script src="../../resource/js/jquery-1.11.2.min.js"></script>
+  <script src="js/previewImg.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript实现弹框层</title>
+    <style>
+    #btnLogin{
+        color: #699;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #close {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    #mask {
+        background-color: #ccc;
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+    }
+
+    #login {
+        position: fixed;
+        z-index: 1001;
+    }
+
+    #loginCon {
+        position: relative;
+        width: 670px;
+        height: 380px;
+        background: #699;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="btnLogin">点击此处会有弹框层</div>
+    <div id="mask"></div>
+    <!-- //遮罩层 -->
+    <div id="login">
+        <!-- //登陆框包裹层 -->
+        <div id="loginCon">
+            <!-- //表单内容 -->
+            <div id="close">X</div>
+            <!-- //关闭按钮 我是登录框哟！ -->
+        </div>
+    </div>
+    <script src="../../resource/js/jquery-1.11.2.min.js"></script>
+    <script>
+    var oMask = $('#mask');
+    var oBtn = $('#btnLogin');
+    var oLogin = $('#login');
+    var oClose = $('#close');
+    function dialog(mask,login) {
+        //获取页面的高度和宽度
+        var sWidth = document.body.scrollWidth || document.documentElement.scrollWidth;
+        var sHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+        //获取页面的可视区域高度和宽度
+        var wWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var wHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //获取登陆框的宽和高
+        var dWidth = login.width();
+        var dHeight = login.height();
+        //设置登陆框的left和top
+        var oLogin_left = wWidth / 2 - dWidth / 2 + "px";
+        var oLogin_top = wHeight / 2 - dHeight / 2 + "px";
+        mask.css({
+            width: sWidth + "px",
+            height: sHeight + "px"
+        });
+        login.css({
+            left: oLogin_left,
+            top: oLogin_top
+        });
+        mask.show();
+        login.show();
+    }
+
+    $(function() {
+        oMask.hide();
+        oLogin.hide();
+        oBtn.click(function() {
+            dialog(oMask,oLogin);
+        });
+    })
+    oClose.click(function(event) {
+        oMask.hide();
+        oLogin.hide();
+    });
+    </script>
+</body>
+
+</html>

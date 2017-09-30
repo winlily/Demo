@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery+JSON实现二级联动</title>
+    <style>
+    .container {
+        text-align: center;
+        margin-top: 30px;
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>jQuery+JSON实现二级联动</h3>
+        <select id="province" onchange="setCity()">
+            <option value="">--选择省会--</option>
+        </select>
+        <select id="city">
+            <option value="">--选择城市--</option>
+        </select>
+    </div>
+    <script>
+    //JSON主要用于数据交换，其实JSON就是有格式的字符串
+    var str = '{"name":"demo","age":"18"}';
+    console.info("当前类型为：" + typeof(str));
+    //把字符串转换成JSON格式
+    var obj = JSON.parse(str);
+    console.info("当前类型为：" + typeof(obj));
+    //JSON输出访问的两种格式
+    console.info(obj.name + "," + obj.age + "||" + obj['name'] + "," + obj['age']);
+
+    //采用JSON格式来存储相应的数据和编码
+    //proJSON和cityJSON是通过"1","2"联系起来的
+    var proJSON = {
+        "1": "广东省",
+        "2": "湖北省"
+    };
+    var cityJSON = {
+        "1": {
+            "020": "广州",
+            "0755": "深圳",
+            "0710": "珠海"
+        },
+        "2": {
+            "021": "武汉",
+            "0752": "十堰",
+            "0712": "襄樊"
+        }
+    };
+    window.onload = function() {
+        var province = document.getElementById("province");
+        for (temp in proJSON) {
+            province.add(new Option(proJSON[temp], temp));
+        }
+    }
+
+    function setCity() {
+        //只要触发了此事件，二级菜单必须还原
+        var city = document.getElementById('city');
+        city.options.length = 1;
+        //获取被选中的省会的值value值就是1,2
+        var val = document.getElementById("province").value;
+        console.info("cityJSON:" + cityJSON[val]);
+        //如果没有选择任何省会信息，则直接返回
+        if (!cityJSON[val])
+            return;
+        //通过选中的值，获取二级菜单列表
+        var sonJSON = cityJSON[val];
+        for (temp in sonJSON) {
+            city.add(new Option(sonJSON[temp], temp));
+        }
+
+    }
+    </script>
+</body>
+
+</html>

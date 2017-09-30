@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3 进度条动画加载</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+    .box {
+        width: 400px;
+        height: 20px;
+        background-color: #ccc;
+        margin: 50px auto;
+    }
+
+    .box1 {
+        width: 100px;
+        height: 20px;
+        background-color: #699;
+        animation: mymove 15s infinite;
+        -webkit-animation: mymove 15s infinite;
+        /*Safari and Chrome*/
+    }
+
+    @keyframes mymove {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80%;
+        }
+    }
+
+    @-webkit-keyframes mymove
+    /*Safari and Chrome*/
+
+    {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"> </div>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="../../resource/js/jquery-1.11.2.min.js"></script>
+</body>
+
+</html>

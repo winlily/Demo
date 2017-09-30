@@ -1,0 +1,108 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$color-green:#699;
+$color-white:#fff;
+$color-gray:#666;
+$color-gray1:#eee;
+
+body {
+    line-height: 1.5;
+    background-color: $color-white;
+    font-weight: 200;
+}
+
+a {
+    text-decoration: none;
+    transition: all .3s;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: $color-green;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.header {
+    height: 100px;
+    background-color: $color-green;
+    text-align: center;
+    color: $color-white;
+    padding-top: 30px;
+}
+
+.header h3 {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.header p {
+    font-size: 14px;
+}
+
+.container {
+    width: 1200px;
+    min-height: 550px;
+    border-radius: 0 0 5px 5px;
+    margin: 0 auto 20px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.items {
+    width: 300px;
+    min-height: 400px;
+    float: left;
+    background: $color-gray1;
+    margin-left: 75px;
+    margin-top: 50px;
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+.items:hover {
+    margin-top: 45px;
+    box-shadow: 0px 5px 10px #ccc;
+}
+
+.item-title {
+    height: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: 24px;
+    color:$color-green;
+}
+
+.items ul {
+    font-size: 14px;
+    padding: 0 20px 20px;
+}
+
+.items ul li {
+    margin-bottom: 5px;
+}
+
+
+.footer {
+    height:30px;
+    text-align: center;
+    font-size: 14px;
+    a{
+    color:$color-gray;
+    }
+}

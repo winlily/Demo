@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3实现loading加载</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="">
+    <style>
+    @keyframes rotate-animation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    body {
+        background: #222;
+    }
+
+    .loader,
+    i {
+        position: absolute;
+        left: 50%;
+        top: 0;
+    }
+
+    .loader {
+        top: 50%;
+        width: 8em;
+        height: 8em;
+        margin: -4em 0 0 -4em;
+    }
+
+    i {
+        display: block;
+        margin-left: -0.25em;
+        transform-origin: 0.25em 4em;
+        animation: rotate-animation 2.5s infinite;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 0.25em;
+        background-color: #CCFFCC;
+        box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5);
+    }
+
+    .i0 {
+        animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    }
+
+    .i1 {
+        animation-timing-function: cubic-bezier(0.1625, 0, 0.8375, 1);
+    }
+
+    .i2 {
+        animation-timing-function: cubic-bezier(0.325, 0, 0.675, 1);
+    }
+
+    .i3 {
+        animation-timing-function: cubic-bezier(0.4875, 0, 0.5125, 1);
+    }
+
+    .i4 {
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <i class="i0"></i>
+        <i class="i1"></i>
+        <i class="i2"></i>
+        <i class="i3"></i>
+        <i class="i4"></i>
+    </div>
+    <script src="../../resource/js/jquery-1.11.2.min.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

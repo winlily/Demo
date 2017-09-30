@@ -1,0 +1,152 @@
+@charset 'UTF-8';
+
+/**
+ *
+ * @authors Your Name
+ * @email you@example.org
+ * @date    2016-11-10 17:10:48
+ * @version $Id$
+ */
+
+body {
+    width: 100%;
+    height: 100%;
+    color: #000;
+}
+
+.content {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#editor {
+    overflow: auto;
+    min-height: 200px;
+    padding: 1em;
+    border: 1px solid silver;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px silver;
+}
+
+
+/* 上传图片*/
+
+.InsertImage input {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    width: 39px;
+    height: 34px;
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.upload-box {
+    z-index: 99999;
+    width: 40%;
+    height: 300px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+.close {
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#mask {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    opacity: .7;
+    background-color: #ccc;
+    filter: alpha(opacity=70);
+}
+
+#dialog {
+    position: fixed;
+    z-index: 1001;
+}
+
+#dialogCon {
+    position: relative;
+    width: 670px;
+    height: 380px;
+    text-align: center;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background: lightblue;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.dialog-titlebar {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border: #ccc;
+    background-color: #f3f3f3;
+}
+
+#tabBar > ul {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#tabBar > ul > li {
+    line-height: 40px;
+    width: 49%;
+    height: 40px;
+    padding: 0;
+    text-align: center;
+}
+
+.dialog-wrapper {
+    width: 97%;
+    height: 80%;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+}
+
+#tabBar {
+    background-color: #f3f3f3;
+}
+
+#tabBar .active {
+    background-color: #fff;
+}
+
+.local > label {
+    line-height: 40px;
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    background: rgba(0, 183, 238, .8);
+}
+
+.tab-content {
+    margin: 10px 0;
+    padding: 50px 0;
+    border: 2px dashed #e6e6e6;
+}

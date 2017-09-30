@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>文本溢出省略</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+    p {
+        width: 250px;
+        background-color: #699;
+    }
+
+    p.text1 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        /* IE 9 */
+        -moz-text-overflow: ellipsis;
+        /* Firefox */
+        -webkit-text-overflow: ellipsis;
+        /* Safari and Chrome */
+        -o-text-overflow: ellipsis;
+        /* Opera */
+    }
+
+    .text2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        /* IE 9 */
+        -moz-text-overflow: ellipsis;
+        /* Firefox */
+        -webkit-text-overflow: ellipsis;
+        /* Safari and Chrome */
+        -o-text-overflow: ellipsis;
+        /* Opera */
+    }
+    </style>
+</head>
+
+<body>
+    <h3>单行文本溢出显示省略号</h3>
+    <p class="text1">单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号单行文本溢出显示省略号</p>
+    <h3>多行文本溢出显示省略号</h3>
+    <p class="text2">多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号多行文本溢出显示省略号</p>
+</body>
+
+</html>
